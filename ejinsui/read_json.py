@@ -2,16 +2,27 @@
 __author__ = 'zhaojm'
 
 import json
+import codecs
 
 
 def read_file(filename):
-    f = open(filename)
-    all_text = f.readall()
+    # f = open(filename, 'r')
+    f = codecs.open(filename, 'r', 'utf-8')
+    all_text = f.read()
     return all_text
 
 
 def read_json(filename):
     all_text = read_file(filename)
-    json_text = all_text.split("ws('list',", 2)[1].split(");PT.wid('list')", 2)[0]
-    json_list = json.loads(json_text)
-    return json_list
+    # print all_text
+    if all_text.find("ws('list',") > -1:
+        # print 'found', filename
+        json_text = all_text.split("ws('list',")[1].split("); PT.wid('list')")[0]
+        # print json_text
+        json_list = json.loads(json_text)
+        # print json_list
+        return json_list
+        # return json.loads('[]')
+    else:
+        # print 'not found', filename
+        return json.loads('[]')

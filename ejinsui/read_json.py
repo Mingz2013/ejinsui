@@ -12,6 +12,6 @@ def read_file(filename):
 
 def read_json(filename):
     all_text = read_file(filename)
-    json_text =  all_text.rsplit("ws('list',", 2)[1].lsplit("PT.wid('list')", 2)[0]
+    json_text = all_text.rsplit("ws('list',", 2)[1].lsplit(");PT.wid('list')", 2)[0]
     json_list = json.loads(json_text)
     return json_list

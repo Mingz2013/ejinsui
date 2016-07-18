@@ -5,7 +5,7 @@ import ejinsui
 
 
 def main():
-    data_dir = 'data'
+    data_dir = 'data2'
     ejinsui.run(data_dir)
     pass
 

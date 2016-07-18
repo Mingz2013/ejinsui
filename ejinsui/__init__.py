@@ -12,8 +12,8 @@ def run(rootdir):
             try:
                 json_list = read_json(rootdir + '/' + filename)
                 for json_obj in json_list:
-                    # CompanyDB.upsert_company(json_obj)
-                    # print json_obj
+                    CompanyDB.upsert_company(json_obj)
+                    print json_obj
                     pass
             except Exception, e:
                 print e.message

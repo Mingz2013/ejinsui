@@ -22,4 +22,4 @@ def run(rootdir):
                     print i
                     pass
             except Exception, e:
-                print e.message
+                print "eeeeeeeeeeeee %s" % e.message

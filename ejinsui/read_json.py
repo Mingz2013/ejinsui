@@ -15,9 +15,9 @@ def read_file(filename):
 def read_json(filename):
     all_text = read_file(filename)
     # print all_text
-    if all_text.find("ws('list',") > -1:
+    if all_text.find(u"ws('list',") > -1:
         # print 'found', filename
-        json_text = all_text.split("ws('list',")[1].split("); PT.wid('list')")[0]
+        json_text = all_text.split(u"ws('list',")[1].split(u"); PT.wid('list')")[0]
         # print json_text
         json_list = json.loads(json_text)
         # print json_list

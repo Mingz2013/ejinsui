@@ -3,7 +3,9 @@ __author__ = 'zhaojm'
 
 import pymongo
 
-from config import MONGO_URI, MONGO_DB
+# MONGO
+MONGO_URI = "localhost:27017"
+MONGO_DB = "ejinsui"
 
 mongo_client = pymongo.MongoClient(MONGO_URI)
 mongo_db = mongo_client[MONGO_DB]
@@ -16,6 +18,4 @@ class CompanyDB(object):
     @staticmethod
     def upsert_company(item):
         print '<MONGO> %s' % item
-        mongo_db['company_info'].update({
-            'cname': item['cname']
-        }, item, True, True)
+        mongo_db.company_info.update({'cname': item['cname']}, item, True, True)

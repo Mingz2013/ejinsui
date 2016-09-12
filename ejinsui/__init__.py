@@ -13,6 +13,8 @@ def run(rootdir):
             try:
                 json_list = read_json(rootdir + '/' + filename)
                 for json_obj in json_list:
+                    d_o = dict(json_obj)
+                    d_o.update({'insert_20160912': 1})
                     CompanyDB.upsert_company(json_obj)
                     i += 1
                     print i, json_obj

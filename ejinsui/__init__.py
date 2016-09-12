@@ -15,7 +15,7 @@ def run(rootdir):
                 for json_obj in json_list:
                     d_o = dict(json_obj)
                     d_o.update({'insert_20160912': 1})
-                    CompanyDB.upsert_company(json_obj)
+                    CompanyDB.upsert_company(d_o)
                     i += 1
                     print i, json_obj
                     pass

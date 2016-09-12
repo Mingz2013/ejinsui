@@ -15,6 +15,7 @@ class CompanyDB(object):
 
     @staticmethod
     def upsert_company(item):
+        print '<MONGO> %s' % item
         mongo_db['company_info'].update({
             'cname': item['cname']
         }, item, True, True)

@@ -5,6 +5,7 @@ import os
 from mongo import CompanyDB
 from read_json import read_json
 
+
 def run(rootdir):
     i = 0
     for parent, dirnames, filenames in os.walk(rootdir):
@@ -15,7 +16,7 @@ def run(rootdir):
                 # print json_list
                 for json_obj in json_list:
                     d_o = dict(json_obj)
-                    d_o.update({'insert_20160912': 1})
+                    d_o.update({u'insert_20160912': 1})
                     CompanyDB.upsert_company(d_o)
                     i += 1
                     print i

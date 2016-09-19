@@ -9,7 +9,7 @@ def main():
     reload(sys)
     sys.setdefaultencoding("utf-8")
 
-    data_dir = 'data3'
+    data_dir = 'data'
     ejinsui.run(data_dir)
     pass
 
